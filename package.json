@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.dev.config.js",
+    "build:prod": "rollup -c rollup.prod.config.js",
     "test": "jest"
   },
   "devDependencies": {
@@ -15,6 +16,7 @@
     "jest": "^22.4.3",
     "regenerator-runtime": "^0.11.1",
     "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-babel-minify": "^4.0.0",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.3.0"
