@@ -1,8 +1,10 @@
-import Base58 from 'base-58';
+import Base58 from 'base58';
 import mainnetRawData from './mainnet.json';
-
+import { compareUint8Arrays, isPair, isEmptyArray } from './utils';
 const mainnetData = mainnetRawData.map(d => d.id);
-const WAVES_ID_TYPE = null;
+
+// Entry point of package
+// Check arguments and do the magic
 const main = (...args) => {
   switch (true) {
     case args.length === 0 || isEmptyArray(args[0]):
@@ -39,22 +41,6 @@ const orderPair = ([first, second]) => {
         ? [first, second]
         : [second, first];
   }
-}; // Logic here
-const createPair = (id1, id2) => [id1, id2];
-const isPair = o =>
-  Array.isArray(o) &&
-  o.length === 2 &&
-  o.every(id => typeof id === 'string' || typeof id === WAVES_ID_TYPE);
-const isEmptyArray = a => Array.isArray(a) && a.length === 0;
-export default main;
-
-// 1    - arr1 bigger
-// -1   - arr2 bigger
-// 0    - equal
-export const compareUint8Arrays = (arr1, arr2) => {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] > arr2[i]) return 1;
-    if (arr1[i] < arr2[i]) return -1;
-  }
-  return 0;
 };
+
+export default main;

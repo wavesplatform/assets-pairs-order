@@ -1,4 +1,5 @@
-import orderPairs, { compareUint8Arrays } from '../';
+import orderPairs from '../';
+import { compareUint8Arrays } from '../utils';
 import { equal } from 'assert';
 
 describe('OrderPairs utility', () => {
@@ -170,7 +171,7 @@ describe('OrderPairs utility', () => {
   it('orders [USD, WAVES] in [USD, WAVES]', () => {
     expect(
       orderPairs(['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null])
-    ).toEqual(['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]);
+    ).toEqual([['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]]);
   });
   it('orders [WAVES, USD] in [USD, WAVES]', () => {});
 });
