@@ -213,8 +213,8 @@ describe('Comparing uint8 arrays', () => {
     const arr2 = new Uint32Array([222, 219, 25, ...equalPart]);
     const arr3 = new Uint32Array([222, 55, 25, ...equalPart]);
     const arr4 = new Uint32Array([222, 55, 176, ...equalPart]);
-    expect(compareUint8Arrays(arr1, arr2)).toBe(-1); // arr2 bigger than arr1
-    expect(compareUint8Arrays(arr1, arr3)).toBe(1); // arr1 bigger than arr3
-    expect(compareUint8Arrays(arr1, arr4)).toBe(0); // arr1 equals arr4
+    expect(compareUint8Arrays(arr1, arr2)).toBe(true); // arr2 bigger than arr1
+    expect(compareUint8Arrays(arr1, arr3)).toBe(false); // arr1 bigger than arr3
+    expect(compareUint8Arrays(arr1, arr4)).toBe(false); // arr1 equals arr4
   });
 });

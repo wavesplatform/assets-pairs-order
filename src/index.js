@@ -1,4 +1,4 @@
-import Base58 from 'base58';
+import Base58 from 'bs58';
 import mainnetRawData from './mainnet.json';
 import { compareUint8Arrays, isPair, isEmptyArray } from './utils';
 const mainnetData = mainnetRawData.map(d => d.id);
@@ -36,8 +36,7 @@ const orderPair = ([first, second]) => {
     case !isFirstInList && isSecondInList:
       return [second, first];
     default:
-      return compareUint8Arrays(Base58.decode(first), Base58.decode(second)) ===
-        1
+      return compareUint8Arrays(Base58.decode(first), Base58.decode(second))
         ? [first, second]
         : [second, first];
   }
