@@ -21,16 +21,6 @@ describe('OrderPairs utility', () => {
    * Arguments handling
    */
   it('accepts ([[string, string]])', () => {
-    try {
-      orderPairs([
-        [
-          'CrztSP3dRxLaXq4odFyDQ3w1nuRmqPZhFW6ib7JMo6Vt',
-          'CrztSP3dRxLaXq4odFyDQ3w1nuRmqPZhFW6ib7JMo6Vt',
-        ],
-      ]);
-    } catch (e) {
-      console.log(e);
-    }
     expect(() =>
       orderPairs([
         [
@@ -173,7 +163,17 @@ describe('OrderPairs utility', () => {
       orderPairs(['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null])
     ).toEqual([['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]]);
   });
-  it('orders [WAVES, USD] in [USD, WAVES]', () => {});
+  it('orders [WAVES, USD] in [USD, WAVES]', () => {
+    expect(
+      orderPairs([null, 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck'])
+    ).toEqual([['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]]);
+  });
+  it('works with custom predefinedList', () => {
+    let prevList = orderPairs.predefinedList;
+    orderPairs.predefinedList = ['1', '2'];
+    expect(orderPairs(['2', '1'])).toEqual([['1', '2']]);
+    orderPairs.predefinedList = prevList;
+  });
 });
 
 describe('Comparing uint8 arrays', () => {
