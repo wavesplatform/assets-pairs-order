@@ -7,7 +7,7 @@
     "build": "rollup -c rollup.dev.config.js",
     "build:prod": "rollup -c rollup.prod.config.js",
     "test": "jest",
-    "prepublish": "yarn build:prod"
+    "prepublish": "yarn test && yarn build:prod"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
