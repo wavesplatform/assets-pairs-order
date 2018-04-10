@@ -1,12 +1,13 @@
 {
   "name": "assets-pairs-order",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.dev.config.js",
     "build:prod": "rollup -c rollup.prod.config.js",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn build:prod"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
