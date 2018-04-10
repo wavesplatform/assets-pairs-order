@@ -2,7 +2,8 @@
 
 ## Example:
 ``` 
-yarn add @waves/assets-pairs-order ```
+yarn add @waves/assets-pairs-order
+```
 ```javascript
 import orderPairs from '@waves/assets-pairs-order'
 
