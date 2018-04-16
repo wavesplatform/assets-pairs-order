@@ -1,5 +1,5 @@
 # Utility for ordering pair of assets in (amount_asset, price_asset)
-
+![Build Status](https://api.travis-ci.org/wavesplatform/assets-pairs-order.svg?branch=master)
 
 ## Accepts:
 ```javascript
