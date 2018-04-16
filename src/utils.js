@@ -3,7 +3,6 @@ const WAVES_ID_TYPE = null;
 export const compareUint8Arrays = (arr1, arr2) => {
   //  true    - arr1 bigger
   //  false    - arr2 bigger
-  //  false    - equal
   return arr1.toString('hex') > arr2.toString('hex');
 };
 export const isPair = o =>
