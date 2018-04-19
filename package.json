@@ -3,11 +3,17 @@
   "version": "2.1.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wavesplatform/assets-pairs-order"
+  },
   "scripts": {
-    "build": "rollup -c rollup.dev.config.js",
-    "build:prod": "rollup -c rollup.prod.config.js",
+    "build:cjs": "rollup -c rollup.cjs.js",
+    "build:cjs:prod": "rollup -c rollup.prod.cjs.js",
+    "build:umd": "rollup -c rollup.umd.js",
+    "build:umd:prod": "rollup -c rollup.prod.umd.js",
     "test": "jest",
-    "prepublish": "yarn test && yarn build:prod"
+    "prepublish": "yarn test && yarn build:cjs:prod && yarn build:umd:prod"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -19,6 +25,7 @@
     "rollup": "^0.58.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-babel-minify": "^4.0.0",
+    "rollup-plugin-cleanup": "^2.0.1",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-builtins": "^2.1.2",

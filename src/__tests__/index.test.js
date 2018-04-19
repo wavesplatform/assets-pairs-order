@@ -80,7 +80,7 @@ describe('OrderPairs utility', () => {
   /**
    * Business logic testing
    */
-  it('orders [USD,EUR] in [USD, EUR]', () => {
+  it('orders [USD,EUR] in [EUR,USD]', () => {
     expect(
       orderPairs(
         'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
@@ -88,12 +88,12 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
         'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
+        'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
       ],
     ]);
   });
-  it('orders [EUR,USD] in [USD, EUR]', () => {
+  it('orders [EUR,USD] in [EUR,USD]', () => {
     expect(
       orderPairs(
         'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
@@ -101,12 +101,12 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
         'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
+        'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
       ],
     ]);
   });
-  it("orders [EUR,'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA'] in [EUR, FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA]", () => {
+  it("orders [EUR,'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA'] in [FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA, EUR]", () => {
     expect(
       orderPairs(
         'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
@@ -114,12 +114,12 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
         'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
+        'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
       ],
     ]);
   });
-  it("orders [FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', EUR] in [EUR, FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA]", () => {
+  it("orders [FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', EUR] in [FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA, EUR]", () => {
     expect(
       orderPairs(
         'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
@@ -127,12 +127,12 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
         'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
+        'Gtb1WRznfchDnTh37ezoDTJ4wcoKaRsKqKjJjy7nm2zU',
       ],
     ]);
   });
-  it("orders ['FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', 'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD'] in ['FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', 'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD']", () => {
+  it("orders ['FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', 'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD'] in ['DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD', 'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA']", () => {
     expect(
       orderPairs(
         'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
@@ -140,12 +140,12 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
         'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
+        'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
       ],
     ]);
   });
-  it("orders ['DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD', 'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA'] in ['FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA', 'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD']", () => {
+  it("orders ['DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD', 'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA'] in ['DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD', 'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA']", () => {
     expect(
       orderPairs(
         'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
@@ -153,25 +153,25 @@ describe('OrderPairs utility', () => {
       )
     ).toEqual([
       [
-        'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
         'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
+        'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
       ],
     ]);
   });
-  it('orders [USD, WAVES] in [USD, WAVES]', () => {
+  it('orders [USD, WAVES] in [WAVES, USD]', () => {
     expect(
-      orderPairs(['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null])
-    ).toEqual([['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]]);
+      orderPairs(['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', 'WAVES'])
+    ).toEqual([['WAVES', 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck']]);
   });
-  it('orders [WAVES, USD] in [USD, WAVES]', () => {
+  it('orders [WAVES, USD] in [WAVES, USD]', () => {
     expect(
-      orderPairs([null, 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck'])
-    ).toEqual([['Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck', null]]);
+      orderPairs(['WAVES', 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck'])
+    ).toEqual([['WAVES', 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck']]);
   });
   it('works with custom predefinedList', () => {
     let prevList = orderPairs.predefinedList;
     orderPairs.predefinedList = ['1', '2'];
-    expect(orderPairs(['2', '1'])).toEqual([['1', '2']]);
+    expect(orderPairs(['2', '1'])).toEqual([['2', '1']]);
     orderPairs.predefinedList = prevList;
   });
 });

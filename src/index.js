@@ -36,17 +36,17 @@ const orderPair = ([first, second]) => {
   const isSecondInList = Boolean(~secondListIndex);
   switch (true) {
     case isFirstInList && isSecondInList:
-      return firstListIndex < secondListIndex
+      return firstListIndex > secondListIndex
         ? [first, second]
         : [second, first];
     case isFirstInList && !isSecondInList:
-      return [first, second];
-    case !isFirstInList && isSecondInList:
       return [second, first];
+    case !isFirstInList && isSecondInList:
+      return [first, second];
     default:
       return compareUint8Arrays(Base58.decode(first), Base58.decode(second))
-        ? [first, second]
-        : [second, first];
+        ? [second, first]
+        : [first, second];
   }
 };
 export default main;

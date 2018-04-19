@@ -31,8 +31,8 @@ orderPairs(
 
 /* [
     [
-      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
       'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
+      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
     ]
   ]
 */
@@ -46,12 +46,12 @@ orderPairs([
 ])
 /* [
     [
-      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
       'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
+      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
     ],
     [
-      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
       'DNhP2zAH5HM1kdUSmxcBqs8RP4vvUgRFc1YgAKkfPmPD',
+      'FxSm86qcEw8wGfpX3T7X5fsnuK5XxYA6ZfVYJja29vMA',
     ]
   ]
 */
@@ -65,8 +65,8 @@ orderPairs.predefinedList = ['2', '1'];
 orderPairs([['1','2']])
 /* [
     [
-      '2',
       '1',
+      '2',
     ]
   ]
 */

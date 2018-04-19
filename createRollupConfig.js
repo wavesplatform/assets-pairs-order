@@ -5,11 +5,11 @@ import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
 import builtins from 'rollup-plugin-node-builtins';
 
-export default {
+export default format => ({
   input: 'src/index.js',
   output: {
-    file: 'dist/index.js',
-    format: 'umd',
+    file: `dist/index.${format}.js`,
+    format,
     name: 'orderAssetsPairs',
   },
   plugins: [
@@ -28,4 +28,4 @@ export default {
       plugins: ['external-helpers'],
     }),
   ],
-};
+});
