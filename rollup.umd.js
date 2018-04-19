@@ -9,7 +9,7 @@ export default {
   input: 'src/index.js',
   output: {
     file: `index.umd.js`,
-    format,
+    format: 'umd',
     name: 'orderAssetsPairs',
   },
   plugins: [
