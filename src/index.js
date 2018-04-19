@@ -1,6 +1,6 @@
-import Base58 from 'bs58';
-import MAINNET_RAW_DATA from './mainnet.json';
-import { compareUint8Arrays, isPair, isEmptyArray } from './utils';
+const Base58 = require('bs58');
+const MAINNET_RAW_DATA = require('./mainnet.json');
+const { compareUint8Arrays, isPair, isEmptyArray } = require('./utils');
 const MAINNET_DATA = MAINNET_RAW_DATA.map(d => d.id);
 
 // Entry point of package
@@ -49,4 +49,4 @@ const orderPair = ([first, second]) => {
         : [first, second];
   }
 };
-export default main;
+module.exports = main;
