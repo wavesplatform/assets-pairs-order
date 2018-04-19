@@ -1,19 +1,16 @@
 {
   "name": "@waves/assets-pairs-order",
   "version": "2.2.0",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/wavesplatform/assets-pairs-order"
   },
   "scripts": {
-    "build:cjs": "rollup -c rollup.cjs.js",
-    "build:cjs:prod": "rollup -c rollup.prod.cjs.js",
     "build:umd": "rollup -c rollup.umd.js",
-    "build:umd:prod": "rollup -c rollup.prod.umd.js",
     "test": "jest",
-    "prepublish": "yarn test && yarn build:cjs:prod && yarn build:umd:prod"
+    "prepublish": "yarn test && yarn build:umd"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
