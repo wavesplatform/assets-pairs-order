@@ -1,7 +1,8 @@
 {
   "name": "@waves/assets-pairs-order",
-  "version": "2.3.5",
+  "version": "3.0.1",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "bs58": "^4.0.1"
+    "bs58": "^4.0.1",
+    "ramda": "^0.25.0"
   }
 }
