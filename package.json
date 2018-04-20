@@ -29,6 +29,7 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "bs58": "^4.0.1"
+    "bs58": "^4.0.1",
+    "ramda": "^0.25.0"
   }
 }
