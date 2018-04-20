@@ -24,5 +24,5 @@ const orderPair = (predefinedList, first, second) => {
         : [first, second];
   }
 };
-module.exports = curry(orderPair);
+module.exports.createOrderPair = curry(orderPair);
 module.exports.MAINNET_DATA = MAINNET_DATA;

@@ -2,6 +2,7 @@
   "name": "@waves/assets-pairs-order",
   "version": "2.3.5",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",

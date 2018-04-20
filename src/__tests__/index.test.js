@@ -1,4 +1,4 @@
-import createOrderPair, { MAINNET_DATA } from '../';
+import { createOrderPair, MAINNET_DATA } from '../';
 import { compareUint8Arrays } from '../utils';
 import { equal } from 'assert';
 
