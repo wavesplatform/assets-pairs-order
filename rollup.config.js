@@ -20,5 +20,6 @@ export default {
     globals(),
     builtins(),
     commonjs(),
+    babel()
   ],
 };
