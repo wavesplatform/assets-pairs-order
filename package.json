@@ -9,9 +9,9 @@
     "url": "https://github.com/wavesplatform/assets-pairs-order"
   },
   "scripts": {
-    "build:umd": "rollup -c rollup.umd.js",
+    "build:browser": "rollup -c rollup.config.js",
     "test": "jest",
-    "prepublish": "yarn test && yarn build:umd"
+    "prepublish": "yarn test && yarn build:browser"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -27,10 +27,10 @@
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.2.0",
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "bs58": "^4.0.1",
-    "ramda": "^0.25.0"
+    "bs58": "^4.0.1"
   }
 }

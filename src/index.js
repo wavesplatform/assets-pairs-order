@@ -1,5 +1,4 @@
 const Base58 = require('bs58');
-const { curry } = require('ramda');
 const MAINNET_RAW_DATA = require('./mainnet.json');
 const { compareUint8Arrays, isPair, isEmptyArray } = require('./utils');
 const MAINNET_DATA = MAINNET_RAW_DATA.map(d => d.id);
@@ -23,6 +22,24 @@ const orderPair = (predefinedList, first, second) => {
         ? [second, first]
         : [first, second];
   }
+};
+
+const curry = function(f) {
+  var slice = Array.prototype.slice,
+    self = f,
+    totalargs = self.length,
+    partial = function(args, fn) {
+      return function() {
+        return fn.apply({}, args.concat(slice.call(arguments)));
+      };
+    },
+    fn = function() {
+      var args = slice.call(arguments);
+      return args.length < totalargs
+        ? partial(args, fn)
+        : self.apply({}, slice.apply(arguments, [0, totalargs]));
+    };
+  return fn;
 };
 module.exports.createOrderPair = curry(orderPair);
 module.exports.MAINNET_DATA = MAINNET_DATA;
