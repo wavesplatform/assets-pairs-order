@@ -12,4 +12,6 @@ declare module '@waves/assets-pairs-order' {
   ): TPair;
 
   export const MAINNET_DATA: string[];
+  export const TESTNET_DATA: string[];
+  export const ARBITRARY_NETWORK_DATA: string[];
 }
