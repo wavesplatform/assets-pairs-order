@@ -1,7 +1,7 @@
 const Base58 = require('bs58');
 const MAINNET_RAW_DATA = require('./mainnet.json');
 const { compareUint8Arrays, isPair, isEmptyArray } = require('./utils');
-const MAINNET_DATA = MAINNET_RAW_DATA.map(d => d.id);
+const MAINNET_DATA = require('./testnet.json');
 
 const orderPair = (predefinedList, first, second) => {
   const firstListIndex = predefinedList.indexOf(first);
