@@ -1,9 +1,13 @@
 const Base58 = require('bs58');
 const { compareUint8Arrays, isPair, isEmptyArray } = require('./utils');
+
 const MAINNET_RAW_DATA = require('./mainnet.json');
-const MAINNET_DATA = MAINNET_RAW_DATA.map(x => x.id);
 const TESTNET_RAW_DATA = require('./testnet.json');
-const TESTNET_DATA = TESTNET_RAW_DATA.map(x => x.id);
+const ARBITRARY_RAW_DATA = require('./arbitrary.json');
+
+const MAINNET_DATA = MAINNET_RAW_DATA.map(d => d.id);
+const TESTNET_DATA = TESTNET_RAW_DATA.map(d => d.id);
+const ARBITRARY_DATA = ARBITRARY_RAW_DATA.map(d => d.id);
 
 const orderPair = (predefinedList, first, second) => {
   const firstListIndex = predefinedList.indexOf(first);
@@ -46,3 +50,4 @@ const curry = function(f) {
 module.exports.createOrderPair = curry(orderPair);
 module.exports.MAINNET_DATA = MAINNET_DATA;
 module.exports.TESTNET_DATA = TESTNET_DATA;
+module.exports.ARBITRARY_DATA = ARBITRARY_DATA;
