@@ -25,8 +25,8 @@ const orderPair = (predefinedList, first, second) => {
       return [first, second];
     default:
       return compareUint8Arrays(Base58.decode(first), Base58.decode(second))
-        ? [second, first]
-        : [first, second];
+        ? [first, second]
+        : [second, first];
   }
 };
 
